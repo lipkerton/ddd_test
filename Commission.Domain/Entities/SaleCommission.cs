@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Runtime;
 
-namespace SaleCommission
+namespace Commission.Domain.Entities
 {
     public class SaleCommission
     {
