@@ -1,5 +1,4 @@
-using System.ComponentModel.DataAnnotations;
-using System.Runtime;
+using Commission.Domain.ValueObjects;
 
 namespace Commission.Domain.Entities
 {
@@ -13,7 +12,7 @@ namespace Commission.Domain.Entities
         public string? CommissionType { get; private set; }
         public bool IsProcessed { get; private set; }
 
-        public Currency Currency => new Currency(CurrencyCode);
+        public Currency Currency => new(CurrencyCode);
         private SaleCommission() { }
         
         public SaleCommission(
