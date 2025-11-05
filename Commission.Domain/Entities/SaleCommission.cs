@@ -12,7 +12,9 @@ namespace Commission.Domain.Entities
         public string? CommissionType { get; private set; }
         public bool IsProcessed { get; private set; }
 
+        #pragma warning disable CS8604 // Possible null reference argument.
         public Currency Currency => new(CurrencyCode);
+        #pragma warning restore CS8604 // Possible null reference argument.
         private SaleCommission() { }
         
         public SaleCommission(
