@@ -1,5 +1,4 @@
-using System.ComponentModel.DataAnnotations;
-using System.Runtime;
+using Commission.Domain.ValueObjects;
 
 namespace Commission.Domain.Entities
 {
@@ -13,7 +12,9 @@ namespace Commission.Domain.Entities
         public string? CommissionType { get; private set; }
         public bool IsProcessed { get; private set; }
 
-        public Currency Currency => new Currency(CurrencyCode);
+        #pragma warning disable CS8604 // Possible null reference argument.
+        public Currency Currency => new(CurrencyCode);
+        #pragma warning restore CS8604 // Possible null reference argument.
         private SaleCommission() { }
         
         public SaleCommission(

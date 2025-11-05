@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+
 namespace Commission.Domain.ValueObjects
 {
     public class Currency
@@ -12,5 +14,10 @@ namespace Commission.Domain.ValueObjects
             Code = code;
         }
         public override string? ToString() => Code;
+        public override bool Equals(object obj) =>
+            obj is Currency other && Code == other.Code;
+
+        public override int GetHashCode() => Code.GetHashCode();
+
     }
 }
